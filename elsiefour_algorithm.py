@@ -83,15 +83,4 @@ def elsie_four(key, message):
             result += s_box[plainletter_xy[1]][plainletter_xy[0]]
             # Shift the s_box and marker for next round
             s_box, marker = shift_s_box(s_box, marker, plainletter_xy, s_box[input_xy[1]][input_xy[0]])
-
     return result
-
-# Decrypt Tests
-print(elsie_four("s2ferw_nx346ty5odiupq#lmz8ajhgcvk79b", "tk5j23tq94_gw9c#lhzs"))
-print(elsie_four("#o2zqijbkcw8hudm94g5fnprxla7t6_yse3v", "b66rfjmlpmfh9vtzu53nwf5e7ixjnp"))
-print(elsie_four("9mlpg_to2yxuzh4387dsajknf56bi#ecwrqv", "grrhkajlmd3c6xkw65m3dnwl65n9op6k_o59qeq"))
-
-print()
-# Encrypt Tests
-ENCRYPTED = elsie_four("7dju4s_in6vkecxorlzftgq358mhy29pw#ba", "%the_swallow_flies_at_midnight")
-print("the_swallow_flies_at_midnight", "->", ENCRYPTED, "->", elsie_four("7dju4s_in6vkecxorlzftgq358mhy29pw#ba", ENCRYPTED))
