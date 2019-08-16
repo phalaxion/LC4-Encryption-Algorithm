@@ -52,6 +52,8 @@ def elsie_four(key, message):
 
     if len(key) != 36:
         return '--Error: Please provide a key of length 36--'
+    if len(set(key)) != 36:
+        return '--Error: Please compose your key of unique characters--'
     if len(set(ALPHABET + key + message)) > 36:
         return '--Error: invalid characters in key/message--'
 
